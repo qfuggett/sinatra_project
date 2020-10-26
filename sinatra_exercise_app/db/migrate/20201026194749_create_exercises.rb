@@ -4,6 +4,7 @@ class CreateExercises < ActiveRecord::Migration
       t.string :name
       t.integer :duration
       t.string :type
+      t.string :user_id
     end
   end
 end
