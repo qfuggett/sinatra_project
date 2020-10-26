@@ -23,10 +23,18 @@ class ApplicationController < Sinatra::Base
       session[:user_id] = @user.id
       redirect to "/user"
     else
-      redirect to "/failure"
+      redirect to "/error"
     end
   end
   
+  get '/error' do
+    erb :error
+  end
+  
+  get '/logout' do 
+    session.clear
+    redirect "/"
+  end
   
   helpers do
     def logged_in?
