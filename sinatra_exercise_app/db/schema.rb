@@ -14,10 +14,11 @@
 ActiveRecord::Schema.define(version: 20201026194749) do
 
   create_table "exercises", force: :cascade do |t|
-    t.string  "name"
-    t.integer "duration"
-    t.string  "detail"
-    t.string  "user_id"
+    t.string   "name"
+    t.integer  "duration"
+    t.string   "detail"
+    t.datetime "exercise_time"
+    t.string   "user_id"
   end
 
   create_table "users", force: :cascade do |t|
