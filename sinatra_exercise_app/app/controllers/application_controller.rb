@@ -12,7 +12,7 @@ class ApplicationController < Sinatra::Base
   end
   
   get '/login' do
-    
+    binding.pry
     erb :login
   end
 
