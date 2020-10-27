@@ -1,21 +1,5 @@
-class UsersController < Sinatra::Base
+class UsersController < ApplicationController
   
-    get '/login' do
-      #binding.pry
-      erb :'sessions/login'
-    end
-    
-    post '/login' do
-      #binding.pry
-      @user = User.find_by(username: params[:username])
-      if @user && @user.authenticate(params[:password])
-        session[:user_id] = @user.id
-        redirect to "/users/index"
-      else
-        redirect to "/welcome"
-      end
-    end
-    
     get '/signup' do
       erb :'/users/signup'
     end
@@ -24,24 +8,11 @@ class UsersController < Sinatra::Base
       @user = User.new(:username => params[:username], :password => params[:password])
   		binding.pry
   		if @user.save
-        redirect "/users/index"
+  		  session[:user_id] = @user.id
+        redirect "/exercises"
       else
-        redirect "/sessions/login"
+        redirect "/login"
       end
     end
   
-    get '/logout' do 
-      session.clear
-      redirect "/"
-    end
-    
-    helpers do
-      def logged_in?
-        !!session[:user_id]
-      end
-  
-      def current_user
-        User.find(session[:user_id])
-      end
-    end
   end

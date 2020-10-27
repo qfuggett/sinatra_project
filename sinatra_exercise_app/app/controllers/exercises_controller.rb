@@ -1,4 +1,4 @@
-class ExercisesController < Sinatra::Base
+class ExercisesController < ApplicationController
   
   get '/exercises' do
     @exercises = Exercise.all
