@@ -1,7 +1,7 @@
 class UsersController < Sinatra::Base
   
     get "/" do
-      erb :'welcome'
+      erb :welcome
     end
     
     get '/login' do
