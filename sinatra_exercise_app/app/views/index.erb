@@ -1,15 +1,35 @@
-<html> 
+<html>
   <head>
     <style>
       h1 {text-align: center;}
       h2 {text-align: center;}
     </style>
   </head>
-    <body>
-      
-      <h1>Exercise Logger</h1>
-      <br>
-      <h2>Please <a href="/login">Log-in</a> or <a href="/signup">Sign-Up</a>!</h2>
+  <body>
+    <h1>Welcome <%= @user.username %>!</h1> <br>
+    <h2>Exercises that you've logged so far: </h2> <br>
     
+    <% @exercise.each do |info| %>
+    <h1><a href="/exercise/:id"><%= @exercise.name %></a> </h1>
+    <ul>
+        <%= @exercise.exercise_time %>
+        <%= @exercise.duration %> minutes
+        <%= @exercise.detail %>
+      <% end %>
+    </ul>
+    <br>
+    
+    <h2>Add An Exericise!</h2>
+    <form method="POST" action="/user"> ##look at old labs for adding something new to the same page, Patch?
+      <label for "Exercise Name"> Exercise Name </label>
+      <input type="text" name="name">
+      
+      <label for "duration"> For How Long Did You Exercise? (minutes only) </label>
+      <input type="text" name="duration">
+      
+      <input type="submit" value="Submit New Exercise">
+    </form>
+    
+    <a href="/logout">Log Out!</a>
   </body>
 </html>
