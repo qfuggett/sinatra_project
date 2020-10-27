@@ -1,7 +1,7 @@
 class UsersController < Sinatra::Base
   
   get "/" do
-      erb :index
+      erb 'app/users/index'
     end
     
     get '/login' do
