@@ -2,7 +2,7 @@
 <h2>Exercises that you've logged so far: </h2> <br>
     
   <% @exercises.each do |exercise| %>
-    <h1><a href="/exercises/:id"><%= exercise.name %></a> </h1>
+    <h3><a href="/exercises/:id"><%= exercise.name %></a> </h3>
     <ul>
       <%= exercise.exercise_time %>
       <%= exercise.duration %> minutes
@@ -11,15 +11,18 @@
     </ul>
 <br>
     
-<h2>Add An Exericise!</h2>
-  <form method="POST" action="/exercises"> ##look at old labs for adding something new to the same page
+<h2>Add An Exericise:</h2>
+  <form method="POST" action="/exercises"> 
     <label for "Exercise Name"> Exercise Name </label>
     <input type="text" id="name" name="name">
-      
+    <br>
     <label for "duration"> For How Long Did You Exercise? (minutes only) </label>
     <input type="text" id="duration" name="duration">
-      
+    <br>
+    <label for "detail"> Type of Exercise: </label>
+    <input type="text" id="detail" name="detail">
+    <br>
     <input type="submit" value="Submit New Exercise">
   </form>
-    
-<a href="/logout">Log Out!</a>
+    <br>
+<a href="/logout">Log Out</a>
