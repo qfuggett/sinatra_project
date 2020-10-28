@@ -11,7 +11,9 @@ class ExercisesController < ApplicationController
   end
   
   post '/exercises' do
+    @exercise = Exercise.create(params)
     
+    redirect "/exercises/#{@exercise.id}"
   end
   
   get '/exercises/:id' do
@@ -21,6 +23,9 @@ class ExercisesController < ApplicationController
   end
   
   patch '/exercises/:id' do
+    @exercise = Exercises.find_by(id: params["id"])
+    @exercise.update(name: params["name"], duration: params["duration"], detail: params["detail"])
     
+    redirect "/exercises/index"
   end
 end
