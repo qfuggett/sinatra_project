@@ -15,7 +15,9 @@ class ExercisesController < ApplicationController
   end
   
   get '/exercises/:id' do
-    
+    binding.pry
+    @exercise = Exercise.find(params[:id])
+    erb :'exercises/show'
   end
   
   patch '/exercises/:id' do
