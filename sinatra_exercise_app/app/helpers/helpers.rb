@@ -1,4 +1,4 @@
-class Helpers < Sinatra::Base
+class Helpers
   
   helpers do
       def self.logged_in?(session)
