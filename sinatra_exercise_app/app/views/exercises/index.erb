@@ -1,5 +1,5 @@
-<% if self.logged_in?(session) %>
-  <h1>Welcome <%= self.current_user(session).username %>!</h1> <br>
+<% if logged_in?(session) %>
+  <h1>Welcome <%= current_user(session).username %>!</h1> <br>
   <% end %>
   
 <h2>Exercises that you've logged so far: </h2> <br>
