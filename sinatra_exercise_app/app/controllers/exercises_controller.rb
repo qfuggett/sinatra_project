@@ -26,7 +26,7 @@ class ExercisesController < ApplicationController
   end
   
    get '/exercises/:id/edit' do
-
+    binding.pry
     @exercise = Exercise.find_by(id: params["id"])
     erb :'exercises/edit'
   end
