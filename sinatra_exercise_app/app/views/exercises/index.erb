@@ -5,7 +5,7 @@
 <h2>Exercises that you've logged so far: </h2> <br>
     
   <% @exercises.each do |exercise| %>
-    <h3><a href="/exercises/<%= exercise.id %>"><%= exercise.name %></a> </h3>
+    <h3><a href="/exercises/<%= exercise.id %>/edit"><%= exercise.name %></a> </h3>
     <ul>
       <%= exercise.exercise_time %>
       <%= exercise.duration %> minutes
