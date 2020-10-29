@@ -2,8 +2,13 @@ class ExercisesController < ApplicationController
   
   get '/exercises' do
     #binding.pry
-    @exercises = Exercise.all
-    erb :'exercises/index'
+    @user = User.find_by_id(session[:user_id])
+    if @user
+      @exercises = Exercise.all
+      erb :'exercises/index'
+    else
+      erb :'welcome'
+    end
   end
   
   get '/exercises/new' do
@@ -12,12 +17,12 @@ class ExercisesController < ApplicationController
   
   post '/exercises' do
     @exercise = Exercise.create(params)
-    
     redirect "/exercises/#{@exercise.id}"
   end
   
   get '/exercises/:id' do
     binding.pry
+    
     @exercise = Exercise.find(params[:id])
     erb :'exercises/show'
   end
