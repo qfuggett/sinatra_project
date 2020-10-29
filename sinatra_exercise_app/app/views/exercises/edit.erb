@@ -7,13 +7,13 @@
   <form action="/exercises/<%= @exercise.id %>" method="POST"> 
     <input id="hidden" type="hidden" name="_method" value="patch">
     <label for "Exercise Name"> Exercise Name </label>
-    <input type="text" id="name" name="name" placeholder="<%= @exercise.name %>">
+    <input type="text" id="name" name="name" value="<%= @exercise.name %>">
     <br>
     <label for "duration"> For How Long Did You Exercise? (minutes only) </label>
-    <input type="text" id="duration" name="duration" placeholder="<%= @exercise.duration %>">
+    <input type="text" id="duration" name="duration" value="<%= @exercise.duration %>">
     <br>
     <label for "detail"> Type of Exercise: </label>
-    <input type="text" id="detail" name="detail" placeholder="<%= @exercise.detail %>">
+    <input type="text" id="detail" name="detail" value="<%= @exercise.detail %>">
     <br>
     <input type="submit" value="Submit My Changes">
   </form>

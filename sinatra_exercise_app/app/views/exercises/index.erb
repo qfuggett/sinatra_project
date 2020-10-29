@@ -1,4 +1,4 @@
-<h1>Welcome <%= current_user(session).username %>!</h1> <br>
+<h1>Welcome <%= current_user.username %>!</h1> <br>
 <h2>Exercises that you've logged so far: </h2> <br>
     
   <% @exercises.each do |exercise| %>
