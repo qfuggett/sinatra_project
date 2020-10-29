@@ -27,6 +27,12 @@ class ExercisesController < ApplicationController
     erb :'exercises/show'
   end
   
+   get '/exercises/:id/edit' do
+
+    @exercise = Exercise.find(params[:id])
+    erb :'exercises/edit'
+  end
+  
   patch '/exercises/:id' do
     @exercise = Exercises.find_by(id: params["id"])
     @exercise.update(name: params["name"], duration: params["duration"], detail: params["detail"])
