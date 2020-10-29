@@ -21,8 +21,6 @@ class ExercisesController < ApplicationController
   end
   
   get '/exercises/:id' do
-    binding.pry
-    
     @exercise = Exercise.find_by(id: params["id"])
     erb :'exercises/show'
   end
@@ -34,10 +32,17 @@ class ExercisesController < ApplicationController
   end
   
   patch '/exercises/:id' do
-    binding.pry
     @exercise = Exercise.find_by(id: params["id"])
     @exercise.update(name: params["name"], duration: params["duration"], detail: params["detail"])
     
     redirect "/exercises/#{@exercise.id}"
+  end
+  
+  delete '/exercises/:id/delete' do
+    binding.pry
+    @exercise = Exercise.find_by(id: params["id"])
+    @exercise.destroy
+    
+    redirect "/exercises"
   end
 end
