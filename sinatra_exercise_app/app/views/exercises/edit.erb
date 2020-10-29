@@ -1,0 +1,16 @@
+<h2>Add An Exercise:</h2>
+  <form action="/exercises/<%= @exercise.id %>" method="POST"> 
+    <input id="hidden" type="hidden" name="_method" value="patch">
+    <label for "Exercise Name"> Exercise Name </label>
+    <input type="text" id="name" name="name">
+    <br>
+    <label for "duration"> For How Long Did You Exercise? (minutes only) </label>
+    <input type="text" id="duration" name="duration">
+    <br>
+    <label for "detail"> Type of Exercise: </label>
+    <input type="text" id="detail" name="detail">
+    <br>
+    <input type="submit" value="Submit New Exercise">
+  </form>
+    <br>
+<a href="/exercises">Go Back</a>
