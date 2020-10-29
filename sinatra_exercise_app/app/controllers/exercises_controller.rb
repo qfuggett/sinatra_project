@@ -37,6 +37,6 @@ class ExercisesController < ApplicationController
     @exercise = Exercises.find_by(id: params["id"])
     @exercise.update(name: params["name"], duration: params["duration"], detail: params["detail"])
     
-    redirect "/exercises/index"
+    redirect "/exercises/#{@exercise.id}"
   end
 end
