@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
         session[:user_id] = @user.id
         redirect to "/exercises"
       else
-        redirect to "/welcome"
+        erb :'welcome'
       end
     end
     
