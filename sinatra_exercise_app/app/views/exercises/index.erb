@@ -1,14 +1,15 @@
-<h1>Welcome <%= current_user.username %>!</h1> <br>
-<h2>Exercises that you've logged so far: </h2> <br>
+<h1>Welcome, <%= current_user.username %>!</h1> <br>
+<h2>Exercises that you've logged so far: </h2>
     
   <% @exercises.each do |exercise| %>
-    <h3><a href="/exercises/<%= exercise.id %>/edit"><%= exercise.name %></a> </h3>
-    <ul>
+    <p>
+    <h3><%= exercise.name %></h3>
       <%= exercise.exercise_time %>
       <%= exercise.duration %> minutes
       <%= exercise.detail %>
+      <h5><a href="/exercises/<%= exercise.id %>/edit">Edit this exercise</a> </h5>
+    </p>
     <% end %>
-    </ul>
 <br>
     
 <h2>Add An Exercise:</h2>

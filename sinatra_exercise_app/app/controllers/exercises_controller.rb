@@ -22,7 +22,6 @@ class ExercisesController < ApplicationController
   end
   
    get '/exercises/:id/edit' do
-    binding.pry
         #check if logged in, send back to index
 
     @exercise = current_user.exercises.find_by(id: params["id"])
@@ -39,7 +38,6 @@ class ExercisesController < ApplicationController
   end
   
   delete '/exercises/:id/delete' do
-    binding.pry
         #check if logged in, send back to index
 
     @exercise = current_user.exercises.find_by(id: params["id"])
