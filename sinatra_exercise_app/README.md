@@ -13,7 +13,7 @@ Type `shotgun` in the terminal to start the application and run it on a server.
 Copy/paste the server address into the browser bar to access the application.
 
 ## Contributing
-Bug reports and pull requests are welcome on Github at https://github.com/qfuggett/cli-project-0908.git. 
+Bug reports and pull requests are welcome on Github at https://github.com/qfuggett/sinatra_project.git. 
 This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## License
