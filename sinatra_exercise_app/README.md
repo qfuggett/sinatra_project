@@ -2,12 +2,12 @@
 
 A CRUD, MCV app using Sinatra that logs a user's exercises.
 
-# Installation 
+## Installation 
 
 Be sure to `bundle install` after cloning from Github.
 Run `rake db:migrate` to set up the database needed for the app.
 
-# Usage
+## Usage
 
 Type `shotgun` in the terminal to start the application and run it on a server.
 Copy/paste the server address into the browser bar to access the application.
