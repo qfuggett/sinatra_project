@@ -17,36 +17,57 @@ class ExercisesController < ApplicationController
   get '/exercises/:id' do
     if logged_in?
       @exercise = current_user.exercises.find_by(id: params["id"])
-      erb :'exercises/show'
-      else redirect "/exercises"
+      if @exercise 
+        erb :'exercises/show'
+      else
+        redirect "/exercises"
+      end
+    else 
+      redirect "/exercises"
     end
   end
   
    get '/exercises/:id/edit' do
     if logged_in?
       @exercise = current_user.exercises.find_by(id: params["id"])
-      erb :'exercises/edit'
-      else redirect "/exercises"
+      if @exercise
+        erb :'exercises/edit'
+      else
+        redirect "/exercises"
+      end
+    else 
+        redirect "/exercises"
     end
   end
   
   patch '/exercises/:id' do
     if logged_in?
       @exercise = current_user.exercises.find_by(id: params["id"])
-      @exercise.update(name: params["name"], duration: params["duration"], detail: params["detail"])
+      if @exercise
+        @exercise.update(name: params["name"], duration: params["duration"], detail: params["detail"])
       
-      redirect "/exercises/#{@exercise.id}"
-    else redirect "/exercises"
+        redirect "/exercises/#{@exercise.id}"
+      else 
+        redirect "/exercises"
+      end
+    else 
+      redirect "/exercises"
     end
   end
   
   delete '/exercises/:id/delete' do
     if logged_in?
       @exercise = current_user.exercises.find_by(id: params["id"])
-      @exercise.destroy
+      if @exercise
+        @exercise.destroy
       
+        redirect "/exercises"
+      else 
+        redirect "/exercises"
+      end
+    else 
       redirect "/exercises"
-    else redirect "/exercises"
     end
   end
+
 end
