@@ -8,7 +8,7 @@ class ApplicationController < Sinatra::Base
     enable :sessions
     set :session_secret, "password_security"
   end
-  
+
   get '/' do
     erb :welcome
   end
@@ -19,8 +19,7 @@ class ApplicationController < Sinatra::Base
     end
     
     def current_user
-      @user = User.find(session[:user_id])
-      @user
+      @user ||= User.find(session[:user_id])
     end
   end
 end
