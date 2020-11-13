@@ -5,6 +5,7 @@ A CRUD, MCV app using Sinatra that logs a user's exercises.
 ## Installation 
 
 Be sure to `bundle install` after cloning from Github.
+Move into the project with `cd sinatra_exercise_app`.
 Run `rake db:migrate` to set up the database needed for the app.
 
 ## Usage
