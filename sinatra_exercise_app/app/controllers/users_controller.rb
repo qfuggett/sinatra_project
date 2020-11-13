@@ -11,7 +11,7 @@ class UsersController < ApplicationController
   		  session[:user_id] = @user.id
         redirect "/exercises"
       else
-        render :signup
+        erb :'users/signup'
       end
     end
   

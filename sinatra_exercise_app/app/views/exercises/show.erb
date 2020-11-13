@@ -1,4 +1,20 @@
-Awesome! <br>
-You did <%= @exercise.duration %> minutes of <%= @exercise.name %>!
+<% if @exercise %>
+  <% if @exercise.errors.any? %>
+    <div id="error_explanation">
+    <ul>
+    <% @exercise.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+    <% end %>
+    <br>
+    <a href="/exercises">Go Back</a>
+    </ul>
+    </div>
+  <% else %>
+        Awesome! <br>
+        You did <%= @exercise.duration %> minutes of <%= @exercise.name %>!
+        <br>
+        <a href="/exercises">Return to home page</a>
+    <% end %>
+<% end %>
 <br>
-<a href="/exercises">Return to home page</a>
+

@@ -11,7 +11,11 @@ class ExercisesController < ApplicationController
 
   post '/exercises' do
     @exercise = current_user.exercises.create(params)
-    redirect "/exercises/#{@exercise.id}"
+    if @exercise.valid?
+      redirect "/exercises/#{@exercise.id}"
+    else
+      erb :'exercises/show'
+    end
   end
   
   get '/exercises/:id' do

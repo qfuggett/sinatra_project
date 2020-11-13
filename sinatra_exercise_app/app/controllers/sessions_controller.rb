@@ -6,16 +6,12 @@ class SessionsController < ApplicationController
     
     post '/login' do
       @user = User.find_by(username: params[:username])
-      if @user.valid?
         if @user && @user.authenticate(params[:password])
           session[:user_id] = @user.id
           redirect to "/exercises"
         else
-          erb :'welcome'
+          render :login
         end
-      else
-        render :login
-      end
     end
     
     get '/logout' do 
